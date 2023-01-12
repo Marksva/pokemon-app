@@ -26,29 +26,39 @@ body {
     background-color: white;
     display: flex;
     flex-direction: column;
-    margin: 12px auto;
+    margin: 50px auto;
     box-sizing: border-box;
     width: 90%;
     border: 1px solid black;
     padding: 25px;
     border-radius: 15px;
-    height: 648px;
+    height: 630px;
+    background: rgb(247, 247, 247);
+    background: linear-gradient(0deg, rgba(247, 247, 247, 1) 0%, rgba(150, 224, 240, 1) 81%);
+    box-shadow: 1px 1px 46px 0px rgba(0, 0, 0, 0.75);
+    -webkit-box-shadow: 1px 1px 46px 0px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 1px 1px 46px 0px rgba(0, 0, 0, 0.75);
 }
-
-.conteudo {}
 
 .conteudo>img {
     width: 200px;
-    margin-top: 20px;
 }
 
 
 .conteudo>h1 {
-    margin-bottom: 40px;
+    margin-bottom: 45px;
+    color: whitesmoke;
+}
+
+.conteudo>h2 {
+    font-weight: 400;
+    font-size: 2.2rem;
 }
 
 .conteudo>p {
-    margin-bottom: 40px;
+    margin-top: 8px;
+    margin-bottom: 45px;
+    color: rgb(192, 156, 226);
 }
 
 .conteudo-sobre {
@@ -59,10 +69,46 @@ body {
     padding: 5px;
 }
 
+.habilidades {
+    font-weight: bold;
+}
+
 .button {
     position: relative;
-    top: 25px;
+    top: 45px;
     padding: 20px;
-
     font-size: 2rem;
+    font-weight: bold;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    background-color: #89d3d8;
+    color: #FFFF;
+
+    transition: all 100ms linear 0s;
+}
+
+button:hover {
+    background-color: #7bced4;
+
+    box-shadow: 0px 1px 11px 0px rgba(0, 0, 0, 0.75);
+    -webkit-box-shadow: 0px 1px 11px 0px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 0px 1px 11px 0px rgba(0, 0, 0, 0.75);
+}
+
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translatey(0)
+    }
+
+    50% {
+        transform: translatey(-15px)
+    }
+}
+
+.efeito-flutuante-infinito {
+    animation: float 2s ease-in-out infinite;
 }

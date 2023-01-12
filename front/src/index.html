@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pokemon</title>
     <link rel="stylesheet" href="./css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 </head>
 
 <body>
@@ -16,35 +17,41 @@
                 <div class="conteudo">
                     <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10.png"
                         alt="pokemon-img" class="img">
+                    <span class="pokemon_api"></span>
                     <h1><span class="name">Articuno</span></h1>
-                    <h2><span>seed Pokémon</span></h2>
+                    <h2><span>Seed Pokémon</span></h2>
                     <p><span class="types">Ice Flying</span></p>
 
                     <div class="conteudo-sobre">
                         <div>
-                            <p><span class="hp">90</span></p>
+                            <p><span class="hp habilidades">90</span></p>
                             <p><span>HP</span></p>
                         </div>
                         <div>
-                            <p><span class="attack">85</span></p>
+                            <p><span class="attack habilidades">85</span></p>
                             <p><span>attack</span></p>
                         </div>
                         <div>
-                            <p><span class="defense">100</span></p>
+                            <p><span class="defense habilidades">100</span></p>
                             <p><span>defense</span></p>
                         </div>
                         <div>
-                            <p><span class="speed">85</span></p>
+                            <p><span class="speed habilidades">85</span></p>
                             <p><span>speed</span></p>
                         </div>
                     </div>
                 </div>
-                <button class="button" onclick="SearchPokemon()">Generate</button>
+                <div>
+                    <button class="button" onclick="SearchRandomPokemon()">Generate</button>
+                </div>
             </div>
+        </section>
+        <section class="secao-2">
+
         </section>
 
     </main>
-    <script src="./js/script.js"></script>
+    <script src="./js/main.js"></script>
 </body>
 
 </html>

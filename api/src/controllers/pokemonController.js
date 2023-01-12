@@ -17,8 +17,7 @@ const controller = {
             hp: req.body.hp,
             attack: req.body.attack,
             defense: req.body.defense,
-            speed: req.body.speed,
-            speed: req.body.speed,
+            speed: req.speed,
         }).then((result) => res.status(201).json(result))
             .catch((err) => res.status(400).json({ error: err.message }));
     }
