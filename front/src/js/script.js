@@ -6,6 +6,7 @@ function SearchPokemon() {
     fetch(PokeApi + `/${numero_sorteado}`)
         .then((response) => response.json())
         .then((data) => {
+            console.log(data)
             const pokemon = {
                 name: data['name'],
                 img: data['sprites']['front_default'],
@@ -32,7 +33,7 @@ function ShowPokemon(pokemon) {
     img.src = pokemon.img;
     name.innerHTML = pokemon['name'];
     const arrayTypes = pokemon['types'].map(e => e['type']['name']);
-    type.innerHTML = arrayTypes.join('  ')
+    type.innerHTML = arrayTypes.join('  ');
     hp.innerHTML = pokemon['hp'];
     attack.innerHTML = pokemon['attack'];
     defense.innerHTML = pokemon['defense'];
