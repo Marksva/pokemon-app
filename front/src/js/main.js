@@ -1,4 +1,3 @@
-
 const myApi = 'http://localhost:3333/pokemons'
 const PokeApi = 'https://pokeapi.co/api/v2/pokemon';
 
@@ -27,7 +26,6 @@ function SearchRandomPokemon() {
 }
 
 
-
 function ShowRandomPokemon(data) {
     let pokemon_api = document.querySelector('.pokemon_api');
     let img = document.querySelector('.img')
@@ -49,6 +47,8 @@ function ShowRandomPokemon(data) {
 
 }
 
+
+
 async function PostPokemon(pokemon) {
 
 
@@ -63,7 +63,6 @@ async function PostPokemon(pokemon) {
     })
         .then((response) => response.json())
         .then((data) => {
-            console.log('Success:', data);
             localStorage.setItem('LastPokemonId', data.pokemon_id);
         })
         .catch((error) => {
@@ -72,6 +71,7 @@ async function PostPokemon(pokemon) {
 
     GetHistory();
 }
+
 
 
 function GetHistory() {
@@ -83,6 +83,7 @@ function GetHistory() {
 
 }
 GetHistory();
+
 
 function ShowHistoryPokemon(data) {
 
@@ -127,6 +128,7 @@ function ShowHistoryPokemon(data) {
 
 }
 
+
 function UpdateName() {
     let name = document.querySelector('.name');
     let input = document.querySelector('.btn-nickname');
@@ -134,7 +136,6 @@ function UpdateName() {
         name: input.value,
     }
     const id = localStorage.getItem('LastPokemonId');
-    console.log(data)
     fetch(myApi + `/${id}`, {
         method: 'PATCH',
         mode: 'cors',
@@ -145,8 +146,7 @@ function UpdateName() {
     })
         .then((response) => response.json())
         .then((data) => {
-            console.log('sucess:', data);
-            
+
             name.innerHTML = data.name
             GetHistory();
         }).catch((error) => {
