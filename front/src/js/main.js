@@ -92,8 +92,7 @@ function ShowHistoryPokemon(data) {
     for (let pokemon of data) {
         output += `
         <div class="box-history">
-        <img src="${pokemon.img}"
-            alt="pokemon-img" class="h-img">
+        <img src="${pokemon.img}" alt="pokemon-img" class="h-img">
         <div class="h-conteudo">
             <div>
                 <h1><span class="h-name">${pokemon.name}</span></h1>
@@ -131,7 +130,7 @@ function ShowHistoryPokemon(data) {
 
 function UpdateName() {
     let name = document.querySelector('.name');
-    let input = document.querySelector('.btn-nickname');
+    let input = document.querySelector('.input-nickname');
     const data = {
         name: input.value,
     }
