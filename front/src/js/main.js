@@ -1,3 +1,4 @@
+
 const myApi = 'http://localhost:3333/pokemons'
 const PokeApi = 'https://pokeapi.co/api/v2/pokemon';
 
@@ -126,11 +127,38 @@ function ShowHistoryPokemon(data) {
 
 }
 
+function UpdateName() {
+    let name = document.querySelector('.name');
+    let input = document.querySelector('.btn-nickname');
+    const data = {
+        name: input.value,
+    }
+    const id = localStorage.getItem('LastPokemonId');
+    console.log(data)
+    fetch(myApi + `/${id}`, {
+        method: 'PATCH',
+        mode: 'cors',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(data),
+    })
+        .then((response) => response.json())
+        .then((data) => {
+            console.log('sucess:', data);
+            
+            name.innerHTML = data.name
+            GetHistory();
+        }).catch((error) => {
+            console.error('Error:', error);
+        })
+
+}
 
 
 function openModal() {
- 
- 
+
+
     const modal = document.getElementById('modal-container');
     modal.classList.add('mostrar');
 
@@ -138,7 +166,6 @@ function openModal() {
         if (e.target.id == 'modal-container' || e.target.id == "fechar") {
             modal.classList.remove('mostrar');
             localStorage.fechaModal = 'modal-container';
-            localStorage.removeItem('LastPokemonId');
         }
     })
 }
