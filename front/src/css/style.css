@@ -46,7 +46,7 @@ body {
 
 
 .conteudo>h1 {
-    margin-bottom: 45px;
+    margin-bottom:15px;
     color: whitesmoke;
 }
 
@@ -55,11 +55,15 @@ body {
     font-size: 2.2rem;
 }
 
-.conteudo>p {
+.types{
     margin-top: 8px;
-    margin-bottom: 45px;
+    margin-bottom: 5px;
     color: rgb(192, 156, 226);
 }
+.pokemon_api {
+    margin-bottom: 15px;
+}
+
 
 .conteudo-sobre {
     display: flex;
@@ -111,4 +115,28 @@ button:hover {
 
 .efeito-flutuante-infinito {
     animation: float 2s ease-in-out infinite;
+}
+
+.box-history {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px;
+    border: 1px solid black;
+    display: flex;
+    font-size: 1.5rem;
+    background-color: #7bced4;
+    border-radius: 5px;
+    margin-bottom: 21px;
+}
+
+.h-conteudo>h1 {
+    text-align: left;
+}
+
+
+
+.h-sobre {
+    display: flex;
+    gap: 25px;
 }

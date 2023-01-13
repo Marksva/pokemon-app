@@ -1,4 +1,4 @@
-
+const myApi = 'http://localhost:3333/pokemons'
 const PokeApi = 'https://pokeapi.co/api/v2/pokemon';
 
 function SearchRandomPokemon() {
@@ -19,8 +19,8 @@ function SearchRandomPokemon() {
                 defense: data['stats'][2]['base_stat'],
                 speed: data['stats'][5]['base_stat'],
             }
-            ShowRandomPokemon(pokemon);
             PostPokemon(pokemon)
+            ShowRandomPokemon(pokemon);
         });
 
 }
@@ -47,9 +47,9 @@ function ShowRandomPokemon(data) {
 }
 
 async function PostPokemon(pokemon) {
-    const dados = {name: 'mark'}
-    const api = 'http://localhost:3333/pokemons'
-    const response = await fetch(api, {
+
+    console.log(pokemon)
+    const response = await fetch(myApi, {
         method: 'POST',
         mode: 'cors',
         headers: {
@@ -66,7 +66,63 @@ async function PostPokemon(pokemon) {
             console.error('Error:', error);
         });
 
+        GetHistory();
 }
+
+
+function GetHistory() {
+    fetch(myApi)
+        .then((response) => response.json())
+        .then((data) => {
+            ShowHistoryPokemon(data);
+        })
+
+}
+GetHistory();
+
+function ShowHistoryPokemon(data) {
+
+    let output = '';
+
+    for (let pokemon of data) {
+        output += `
+        <div class="box-history">
+        <img src="${pokemon.img}"
+            alt="pokemon-img" class="h-img">
+        <div class="h-conteudo">
+            <div>
+                <h1><span class="h-name">${pokemon.name}</span></h1>
+                <span class="h-pokemon_api">#${pokemon.pokemon_api}</span>
+                <p><span>Seed Pokémon</span></p>
+                <p><span class="h-types">${pokemon.types}</span></p>
+            </div>
+        </div>
+        <div class="h-sobre">
+            <div>
+                <p><span class="-h-hp">${pokemon.hp}</span></p>
+                <p><span>HP</span></p>
+            </div>
+            <div>
+                <p><span class="h-attack">${pokemon.attack}</span></p>
+                <p><span>attack</span></p>
+            </div>
+            <div>
+                <p><span class="h-defense">${pokemon.defense}</span></p>
+                <p><span>defense</span></p>
+            </div>
+            <div>
+                <p><span class="h-speed">${pokemon.speed}</span></p>
+                <p><span>speed</span></p>
+            </div>
+        </div>
+    </div> `;
+
+        document.querySelector('.secao-2').innerHTML = output;
+    }
+
+
+}
+
 
 
 
