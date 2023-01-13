@@ -1,5 +1,5 @@
-const { Model, DataTypes } = require('sequelize');
 const db = require('../database/db');
+const { Model, DataTypes } = require('sequelize');
 
 const Pokemon = db.define(
     "pokemons",
@@ -44,8 +44,7 @@ const Pokemon = db.define(
         },
     },
     {
-        db,
-        modenName: 'pokemons',
+        modelName: 'pokemons',
         timestamps: true,
         createdAt: true,
         updatedAt: true,

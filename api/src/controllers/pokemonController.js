@@ -8,6 +8,7 @@ const controller = {
             .then((result) => res.status(200).json(result))
             .catch((err) => res.status(400).json({ error: err.message }));
     },
+
     post(req, res) {
         db.create({
             pokemon_api: req.body.pokemon_api,
@@ -20,8 +21,19 @@ const controller = {
             speed: req.body.speed,
         }).then((result) => res.status(201).json(result))
             .catch((err) => res.status(400).json({ error: err.message }));
-    }
+    },
 
+    update(req, res) {
+        let alteracao = {
+            name: req.body.name,
+        }
+        db.update(alteracao, {
+            where: {
+                pokemon_id: req.params.id
+            }
+        }).then((result) => res.status(200).json(alteracao))
+            .catch((err) => res.status(400).json({ error: err.message }));
+    },
 }
 
 module.exports = controller;

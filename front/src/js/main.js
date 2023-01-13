@@ -25,6 +25,8 @@ function SearchRandomPokemon() {
 
 }
 
+
+
 function ShowRandomPokemon(data) {
     let pokemon_api = document.querySelector('.pokemon_api');
     let img = document.querySelector('.img')
@@ -48,6 +50,7 @@ function ShowRandomPokemon(data) {
 
 async function PostPokemon(pokemon) {
 
+
     const response = await fetch(myApi, {
         method: 'POST',
         mode: 'cors',
@@ -59,13 +62,14 @@ async function PostPokemon(pokemon) {
     })
         .then((response) => response.json())
         .then((data) => {
-            // console.log('Success:', data);
+            console.log('Success:', data);
+            localStorage.setItem('LastPokemonId', data.pokemon_id);
         })
         .catch((error) => {
             console.error('Error:', error);
         });
 
-        GetHistory();
+    GetHistory();
 }
 
 
@@ -122,14 +126,19 @@ function ShowHistoryPokemon(data) {
 
 }
 
-function openModal(){
-    const modal = document.getElementById('modal-container')
-    modal.classList.add('mostrar')
 
-    modal.addEventListener('click', (e) =>{
-        if (e.target.id == 'modal-container' || e.target.id == "fechar"){
-            modal.classList.remove('mostrar')
-            localStorage.fechaModal = 'modal-container'
+
+function openModal() {
+ 
+ 
+    const modal = document.getElementById('modal-container');
+    modal.classList.add('mostrar');
+
+    modal.addEventListener('click', (e) => {
+        if (e.target.id == 'modal-container' || e.target.id == "fechar") {
+            modal.classList.remove('mostrar');
+            localStorage.fechaModal = 'modal-container';
+            localStorage.removeItem('LastPokemonId');
         }
     })
 }
