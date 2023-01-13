@@ -3,7 +3,7 @@ const db = require('../model/pokemonModel');
 
 const controller = {
 
-    get(req, res) {
+    getAll(req, res) {
         db.findAll()
             .then((result) => res.status(200).json(result))
             .catch((err) => res.status(400).json({ error: err.message }));

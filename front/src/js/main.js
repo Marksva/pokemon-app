@@ -48,7 +48,6 @@ function ShowRandomPokemon(data) {
 
 async function PostPokemon(pokemon) {
 
-    console.log(pokemon)
     const response = await fetch(myApi, {
         method: 'POST',
         mode: 'cors',
@@ -60,7 +59,7 @@ async function PostPokemon(pokemon) {
     })
         .then((response) => response.json())
         .then((data) => {
-            console.log('Success:', data);
+            // console.log('Success:', data);
         })
         .catch((error) => {
             console.error('Error:', error);
@@ -122,6 +121,19 @@ function ShowHistoryPokemon(data) {
 
 
 }
+
+function openModal(){
+    const modal = document.getElementById('modal-container')
+    modal.classList.add('mostrar')
+
+    modal.addEventListener('click', (e) =>{
+        if (e.target.id == 'modal-container' || e.target.id == "fechar"){
+            modal.classList.remove('mostrar')
+            localStorage.fechaModal = 'modal-container'
+        }
+    })
+}
+
 
 
 
