@@ -1,4 +1,5 @@
 const db = require('../model/pokemonModel');
+
 const { v4: uuidv4 } = require('uuid');
 
 const controller = {
