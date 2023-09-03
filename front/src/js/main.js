@@ -1,5 +1,13 @@
-const myApi = 'http://localhost:3333/pokemons'
+const myApi = 'http://localhost:3333/pokemons';
 const PokeApi = 'https://pokeapi.co/api/v2/pokemon';
+
+
+getLastPokemon()
+
+
+
+
+
 
 function SearchRandomPokemon() {
     let random = Math.floor(Math.random() * 151);
@@ -26,6 +34,7 @@ function SearchRandomPokemon() {
 
 
 function ShowRandomPokemon(data) {
+
     let pokemon_api = document.querySelector('.pokemon_api');
     let img = document.querySelector('.img')
     let name = document.querySelector('.name');
@@ -91,7 +100,7 @@ function ShowHistoryPokemon(data) {
     for (let pokemon of data) {
         output += `
         <div class="box-history">
-        <img src="${pokemon.img}" alt="pokemon-img" class="h-img">
+        <img src="${pokemon.img}" alt="pokemon-img" class="h-img efeito-flutuante-infinito">
         <div class="h-conteudo">
             <div>
                 <h1><span class="h-name">${pokemon.name}</span></h1>
@@ -169,8 +178,17 @@ function openModal() {
 }
 
 
+function getLastPokemon() {
+    const route = 'http://localhost:3333/last-pokemon';
+    fetch(route)
+        .then((response) => response.json())
+        .then((data) => {
+            console.log(data);
+            ShowRandomPokemon(data);
+            return data;
+        })
 
-
+}
 
 
 
