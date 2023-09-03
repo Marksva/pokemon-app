@@ -45,7 +45,7 @@ body {
 
 
 .conteudo>h1 {
-    margin-bottom:15px;
+    margin-bottom: 15px;
     color: whitesmoke;
 }
 
@@ -54,11 +54,12 @@ body {
     font-size: 2.2rem;
 }
 
-.types{
+.types {
     margin-top: 8px;
     margin-bottom: 5px;
     color: rgb(192, 156, 226);
 }
+
 .pokemon_api {
     margin-bottom: 15px;
 }
@@ -108,19 +109,19 @@ body {
     }
 
     50% {
-        transform: translatey(-15px)
+        transform: translatey(-8px)
     }
 }
 
 
 .efeito-flutuante-infinito {
-    animation: float 2s ease-in-out infinite;
+    animation: float 2.6s ease-in-out infinite;
 }
 
 /* modal */
 
 
-.btn{
+.btn {
     display: inline;
     cursor: pointer;
     transition: background-color 0.5s;
@@ -132,7 +133,7 @@ body {
 }
 
 
-.modal-container{
+.modal-container {
     width: 100vw;
     height: 100vh;
     position: fixed;
@@ -145,9 +146,9 @@ body {
     display: none;
 }
 
-.modal{
+.modal {
     width: 60%;
-    min-width:400px;
+    min-width: 400px;
     min-height: 200px;
     background-color: #ffffff62;
     backdrop-filter: blur(10px);
@@ -155,7 +156,7 @@ body {
     border-radius: 10px;
 }
 
-.fechar{
+.fechar {
     position: absolute;
     top: -10px;
     right: -10px;
@@ -170,7 +171,7 @@ body {
     cursor: pointer;
 }
 
-.modal h1{
+.modal h1 {
     margin-bottom: 20px;
 }
 
@@ -179,22 +180,22 @@ body {
 }
 
 @keyframes animate-modal {
-    from{
+    from {
         opacity: 0;
         transform: translate3d(0, -20px, 0);
     }
 
-    to{
+    to {
         opacity: 1;
         transform: translate3d(0, 0, 0);
     }
 }
 
-.modal-container.mostrar{
+.modal-container.mostrar {
     display: flex;
 }
 
-.mostrar .modal{
+.mostrar .modal {
     animation: animate-modal .3s;
 }
 
@@ -225,4 +226,3 @@ body {
     display: flex;
     gap: 25px;
 }
-
