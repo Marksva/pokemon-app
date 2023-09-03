@@ -36,6 +36,22 @@ const controller = {
         }).then((result) => res.status(200).json(alteracao))
             .catch((err) => res.status(400).json({ error: err.message }));
     },
+
+    getLastPokemon(req, res) {
+        db.findAll({
+            order: [['createdAt', 'DESC']],
+            limit: 1,
+        })
+            .then((result) => {
+                if (result.length === 0) {
+                    return res.status(404).json({ error: 'Nenhum Pokémon encontrado.' });
+                }
+                res.status(200).json(result[0]);
+            })
+            .catch((err) => res.status(500).json({ error: err.message }));
+
+    }
+
 }
 
 module.exports = controller;
