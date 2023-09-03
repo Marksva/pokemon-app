@@ -1,17 +1,19 @@
 const db = require('../model/pokemonModel');
-
+const { v4: uuidv4 } = require('uuid');
 
 const controller = {
 
     getAll(req, res) {
-        db.findAll()
+        db.findAll({
+            order: [['createdAt', 'DESC']]
+        })
             .then((result) => res.status(200).json(result))
             .catch((err) => res.status(400).json({ error: err.message }));
     },
 
     post(req, res) {
         db.create({
-            pokemon_api: req.body.pokemon_api,
+            pokemon_id: uuidv4(),
             name: req.body.name,
             img: req.body.img,
             types: req.body.types,

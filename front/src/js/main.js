@@ -10,7 +10,6 @@ function SearchRandomPokemon() {
             let types = data.types.map(e => e.type.name);
             types = types.join(' ');
             let pokemon = {
-                pokemon_api: data['id'],
                 name: data['name'],
                 img: data['sprites']['front_default'],
                 types: types,

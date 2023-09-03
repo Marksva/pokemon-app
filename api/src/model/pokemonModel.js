@@ -5,14 +5,9 @@ const Pokemon = db.define(
     "pokemons",
     {
         pokemon_id: {
-            type: DataTypes.INTEGER,
+            type: DataTypes.STRING,
             allowNull: false,
             primaryKey: true,
-            autoIncrement: true,
-        },
-        pokemon_api: {
-            type: DataTypes.INTEGER,
-            allowNull: false,
         },
         name: {
             type: DataTypes.STRING,
