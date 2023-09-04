@@ -1,4 +1,3 @@
-// userController.js
 const User = require('../model/userModel');
 const { v4: uuidv4 } = require('uuid');
 
