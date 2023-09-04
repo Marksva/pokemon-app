@@ -10,6 +10,7 @@ router.route('/last-pokemon').get(pokemonController.getLastPokemon);
 
 
 router.route('/user').post(userController.post);
+router.route('/login').post(userController.login);
 
 
 
