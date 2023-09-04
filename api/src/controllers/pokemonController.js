@@ -1,11 +1,11 @@
-const db = require('../model/pokemonModel');
+const Pokemon = require('../model/pokemonModel');
 
 const { v4: uuidv4 } = require('uuid');
 
-const controller = {
+const controllerPokemon = {
 
     getAll(req, res) {
-        db.findAll({
+        Pokemon.findAll({
             order: [['createdAt', 'DESC']]
         })
             .then((result) => res.status(200).json(result))
@@ -13,7 +13,7 @@ const controller = {
     },
 
     post(req, res) {
-        db.create({
+        Pokemon.create({
             pokemon_id: uuidv4(),
             name: req.body.name,
             img: req.body.img,
@@ -30,7 +30,7 @@ const controller = {
         let alteracao = {
             name: req.body.name,
         }
-        db.update(alteracao, {
+        Pokemon.update(alteracao, {
             where: {
                 pokemon_id: req.params.id
             }
@@ -39,7 +39,7 @@ const controller = {
     },
 
     getLastPokemon(req, res) {
-        db.findAll({
+        Pokemon.findAll({
             order: [['createdAt', 'DESC']],
             limit: 1,
         })
@@ -55,4 +55,4 @@ const controller = {
 
 }
 
-module.exports = controller;
+module.exports = controllerPokemon;
