@@ -1,10 +1,11 @@
-const {Sequelize} = require('sequelize');
+const { Sequelize } = require('sequelize');
+const config = require('../../config');
 
 
-const connection = new Sequelize('pokemon', 'root', '1234', {
-    host: '127.0.0.1',
-    port: '3307',
-    dialect: 'mysql'
+const connection = new Sequelize(config.env.MYSQL_DATABASE, config.env.MYSQL_USER, config.env.MYSQL_PASSWORD, {
+    host: config.env.MYSQL_HOST,
+    port: config.env.MYSQL_PORT,
+    dialect: config.env.MYSQL_DIALECT
 });
 
 connection.authenticate()
