@@ -18,7 +18,7 @@ const UserController = {
         const { name, email, senha } = req.body;
 
         try {
-            
+
             if (!isValidEmail(email)) {
                 return res.status(400).json({ error: 'Email inválido.' });
             }
@@ -44,11 +44,11 @@ const UserController = {
     },
 
     async login(req, res) {
-        
+
         const { email, senha } = req.body;
 
         try {
-            
+
             if (!isValidEmail(email)) {
                 return res.status(400).json({ error: 'Email inválido.' });
             }
