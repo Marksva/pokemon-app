@@ -1,5 +1,7 @@
 const User = require('../model/userModel');
 const { v4: uuidv4 } = require('uuid');
+const jwt = require('jsonwebtoken');
+const config = require('../../config');
 
 function isValidEmail(email) {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -35,6 +37,8 @@ const UserController = {
                 senha: senha,
             });
 
+
+
             return res.status(201).json(newUser);
 
         } catch (error) {
@@ -61,8 +65,23 @@ const UserController = {
                 return res.status(401).json({ error: 'Email ou senha incorretos.' });
             }
 
+            const tokenPayload = {
+                id_usuario: user.id,
+                name: user.name,
+                email: user.email
+            };
 
-            return res.status(200).json(user);
+
+            const token = jwt.sign(
+                tokenPayload,
+                config.env.JWT_KEY,
+                {
+                    expiresIn: "1h"
+                });
+
+
+
+            return res.status(200).json({ token });
 
         } catch (error) {
             console.error(error);
