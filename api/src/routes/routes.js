@@ -1,16 +1,19 @@
 const express = require('express');
-const pokemonController = require('../controllers/pokemonController');
 const userController = require('../controllers/userController');
-const router = express.Router();
+const pokemonController = require('../controllers/pokemonController');
+const authMiddleware = require('../../middleware/login');
 
-router.route('/pokemons').get(pokemonController.getAll);
-router.route('/pokemons').post(pokemonController.post);
-router.route('/pokemons/:id').patch(pokemonController.update);
-router.route('/last-pokemon').get(pokemonController.getLastPokemon);
+
+const router = express.Router();
 
 
 router.route('/user').post(userController.post);
 router.route('/login').post(userController.login);
+
+router.route('/pokemons').get(authMiddleware, pokemonController.getAll);
+router.route('/pokemons').post(authMiddleware, pokemonController.post);
+router.route('/pokemons/:id').patch(authMiddleware, pokemonController.update);
+router.route('/last-pokemon').get(authMiddleware, pokemonController.getLastPokemon);
 
 
 
