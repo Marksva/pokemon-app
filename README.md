@@ -4,7 +4,7 @@ O projeto "PokeDex Full Stack" é uma aplicação web full stack que utiliza Nod
 
 Meu objetivo é criar uma plataforma que permita aos usuários explorar informações detalhadas sobre Pokémon, garantindo a segurança de seus dados por meio da autenticação JWT. Este projeto é um laboratório de aprendizado destinado a explorar e praticar diferentes tecnologias, linguagens de programação e conceitos que compõem o ecossistema do desenvolvimento web full stack.
 
-Com funcionalidades de busca, autenticação segura e a capacidade de cada usuário gerar e salvar os dados personalizados em na própria API. Para explorar as tecnologias mais recentes e as boas práticas.
+Com funcionalidades de busca externa na PokéApi, autenticação segura e a capacidade de cada usuário gerar e salvar os dados personalizados na própria API. Para explorar tecnologias mais recentes e as boas práticas.
 
 Estou empolgado em continuar aprimorando e expandindo as funcionalidades do projeto no futuro, enquanto continuo minha jornada de aprendizado no desenvolvimento web full stack.
 
@@ -13,9 +13,10 @@ Estou empolgado em continuar aprimorando e expandindo as funcionalidades do proj
 ## 🛠️ Construído com
 
 
-* [React](https://react.dev/learn) - O framework web usado 
-* [Node.js](https://nodejs.org/pt-br/docs) - Ambiente de execução
-* [MySql Workbench](https://dev.mysql.com/doc/workbench/en/) - Gerenciar bancos de dados MySQL
+* [React](https://react.dev/learn) - O framework web usado.
+* [Node.js](https://nodejs.org/pt-br/docs) - Ambiente de execução.
+* [MySql Workbench](https://dev.mysql.com/doc/workbench/en/) - Gerenciar bancos de dados MySQL.
+* [PokéApi](https://pokeapi.co/docs/v2) - Api de consumo.
 
 
 ---
