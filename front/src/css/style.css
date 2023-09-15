@@ -78,8 +78,6 @@ body {
 }
 
 .button {
-    position: relative;
-    top: 45px;
     padding: 20px;
     font-size: 2rem;
     font-weight: bold;
