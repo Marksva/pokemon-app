@@ -19,7 +19,6 @@ Estou empolgado em continuar aprimorando e expandindo as funcionalidades do proj
 
 - [ ] Página de cadastro de usuário.
 - [ ] Página de login de usuário.
-- [ ] Página .
 - [ ] Capacidade de salvar Pokémon favoritos na conta do usuário.
 - [ ] Sistema de busca que permite aos usuários pesquisar Pokémon por nome.
 - [ ] Página de perfil do usuário para gerenciar informações pessoais.
