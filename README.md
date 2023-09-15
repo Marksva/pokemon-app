@@ -8,9 +8,27 @@ Com funcionalidades de busca externa na PokéApi, autenticação segura e a capa
 
 Estou empolgado em continuar aprimorando e expandindo as funcionalidades do projeto no futuro, enquanto continuo minha jornada de aprendizado no desenvolvimento web full stack.
 
+##  O que já está implementado 
+- [x] Página inicial com informações gerais sobre Pokémon.
+- [x] Integração do front-end com a API Pokémon para exibir dados detalhados de Pokémon.
+- [x] Autenticação JWT na api para garantir a segurança dos dados dos usuários.
 
 
-## 🛠️ Construído com
+
+## O que falta implementar
+
+- [ ] Página de cadastro de usuário.
+- [ ] Página de login de usuário.
+- [ ] Página .
+- [ ] Capacidade de salvar Pokémon favoritos na conta do usuário.
+- [ ] Sistema de busca que permite aos usuários pesquisar Pokémon por nome.
+- [ ] Página de perfil do usuário para gerenciar informações pessoais.
+- [ ] Adicionar funcionalidade de pesquisa avançada, como filtro por tipo de Pokémon.
+- [ ] Implementar testes automatizados para garantir a estabilidade do aplicativo.
+
+
+
+## 🛠️ Construindo com
 
 
 * [React](https://react.dev/learn) - O framework web usado.
