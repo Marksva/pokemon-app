@@ -13,32 +13,36 @@ const controllerPokemon = {
     },
 
     post(req, res) {
+        
+        const {name, img, types, hp, attack, defense, speed} = req.body;
+
         Pokemon.create({
-            pokemon_id: uuidv4(),
-            name: req.body.name,
-            img: req.body.img,
-            types: req.body.types,
-            hp: req.body.hp,
-            attack: req.body.attack,
-            defense: req.body.defense,
-            speed: req.body.speed,
+            pokemonId: uuidv4(),
+            name: name,
+            img: img,
+            types: types,
+            hp: hp,
+            attack: attack,
+            defense: defense,
+            speed: speed,
         }).then((result) => res.status(201).json(result))
             .catch((err) => res.status(400).json({ error: err.message }));
     },
 
     update(req, res) {
-        let alteracao = {
-            name: req.body.name,
-        }
-        Pokemon.update(alteracao, {
+
+        const { name } = req.body;
+        
+        Pokemon.update(name, {
             where: {
-                pokemon_id: req.params.id
+                pokemonId: req.params.id
             }
         }).then((result) => res.status(200).json(alteracao))
             .catch((err) => res.status(400).json({ error: err.message }));
     },
 
     getLastPokemon(req, res) {
+
         Pokemon.findAll({
             order: [['createdAt', 'DESC']],
             limit: 1,
