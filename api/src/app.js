@@ -1,7 +1,7 @@
 const express = require('express');
 const router = require('./routes/routes.js');
 const cors = require('cors');
-const config = require('../config.js');
+require('dotenv').config();
 
 const app = express();
 
@@ -12,6 +12,6 @@ app.use(express.json());
 
 app.use(router);
 
-app.listen(config.env.PORT, () => {
+app.listen(process.env.PORT, () => {
     console.log('server runing');
 });
