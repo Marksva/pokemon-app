@@ -15,9 +15,10 @@ function checkUserExists(email) {
 }
 
 const UserController = {
+    
     async post(req, res) {
 
-        const { name, email, senha } = req.body;
+        const { name, email, password } = req.body;
 
         try {
 
@@ -34,7 +35,7 @@ const UserController = {
             const newUser = await User.create({
                 name: name,
                 email: email,
-                senha: senha,
+                password: password,
             });
 
 
@@ -49,7 +50,7 @@ const UserController = {
 
     async login(req, res) {
 
-        const { email, senha } = req.body;
+        const { email, password } = req.body;
 
         try {
 
@@ -58,7 +59,7 @@ const UserController = {
             }
 
             const user = await User.findOne({
-                where: { email: email, senha: senha },
+                where: { email: email, password: password },
             });
 
             if (!user) {
