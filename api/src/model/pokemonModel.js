@@ -4,7 +4,7 @@ const { Model, DataTypes } = require('sequelize');
 const Pokemon = db.define(
     "pokemons",
     {
-        pokemon_id: {
+        pokemonId: {
             type: DataTypes.STRING,
             allowNull: false,
             primaryKey: true,

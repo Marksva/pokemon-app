@@ -4,20 +4,20 @@ const { Sequelize, Model, DataTypes } = require('sequelize');
 const User = db.define(
     "users",
     {
-        user_id: {
+        userId: {   
             type: DataTypes.UUID,
             defaultValue: DataTypes.UUIDV4,
             primaryKey: true,
+        },
+        name: {
+            type: DataTypes.STRING,
+            allowNull: false,
         },
         email: {
             type: DataTypes.STRING,
             allowNull: false,
         },
-        senha: {
-            type: DataTypes.STRING,
-            allowNull: false,
-        },
-        name: {
+        password: {
             type: DataTypes.STRING,
             allowNull: false,
         },
